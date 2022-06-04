@@ -1,0 +1,24 @@
+{
+  "DefaultFileUploader": "someboringimagehost",
+  "DefaultImageUploader": "someboringimagehost",
+  "DefaultUrlShortener": "someboringimagehost",
+  "XineramaHead": 0,
+  "NotificationTime": 10,
+  "NotifyUploading": true,
+  "NotifyCommand": "",
+  "ClipboardTime": 5,
+  "SaveFolder": ".local/share/sharenix",
+  "OrganizedFolders": false,
+
+  "Services": [
+  {
+    "Name": "someboringimagehost",
+    "DestinationType": "ImageUploader, TextUploader, FileUploader",
+    "RequestType": "POST",
+    "RequestURL": "https://URL.DOMAIN/host",
+    "FileFormName": "sharex",
+    "Arguments": {
+      "secret": "token"
+    }
+  }]
+}

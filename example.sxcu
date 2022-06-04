@@ -1,0 +1,11 @@
+﻿{
+  "Name": "someboringimagehost",
+  "DestinationType": "ImageUploader, TextUploader, FileUploader",
+  "RequestType": "POST",
+  "RequestURL": "https://URL.DOMAIN/host",
+  "FileFormName": "sharex",
+  "Arguments": {
+    "secret": "token"
+  },
+  "ResponseType": "Text"
+}
