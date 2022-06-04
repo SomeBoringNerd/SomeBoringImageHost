@@ -6,6 +6,8 @@ owned by SomeBoringNerd
 
 The Owner allow the use of their work for personal / non-commercial work under the following guidelines / rules
 
+That license describe what you can and can't do with my code and don't apply to end user, only people who want to use / edit the code of the repo.
+
 > 1. DON'T STEAL THE CODE
 Self explanatory, no one like people that clone the repo, change a few things (mostly erasing trace of the Owner) and claim the code as their own. You can use part of the code / the entirety of the repo if you want, just give credit where credit is due, and dont lie about who made what.
 
