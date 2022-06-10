@@ -4,5 +4,6 @@
     "img_site_name":"",
     "img_title":"",
     "img_secret":"",
-    "port":"8069"
+    "port":"8069",
+    "url":"http://local.host"
 }
