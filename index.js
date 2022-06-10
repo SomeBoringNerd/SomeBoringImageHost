@@ -31,7 +31,7 @@ app.post(sub + '/host', upload.single('sharex') ,(req, res) =>
 
     fs.rename(oldPath, newPath, () => console.log('error'))
     
-    res.send("https://someboringnerd.xyz"+ sub + def);
+    res.send("https://someboringnerd.xyz"+ sub + "/" + def);
 })
 
 app.get(sub + '/:img_id', (req, res) => {
@@ -43,7 +43,7 @@ app.get(sub + '/:img_id', (req, res) => {
     '       <meta property="og:title" content="' + config.img_title + '" />\n' +
     '       <meta property="og:type" content="website" />\n' +
     '       <meta property="og:site_name" content="' + config.img_site_name + '"/>\n' +
-    '       <meta property="og:image" content="/img/' + req.params.img_id + '"/>\n' +
+    '       <meta property="og:image" content="https://someboringnerd.xyz'+ sub +'/img/' + req.params.img_id + '"/>\n' +
     '       <meta property="og:description" content="' + config.img_description + '">\n' +
     '       <meta name="theme-color" content="#0C2C63">\n' +
     '       <link type="application/json+oembed" href="">\n' +
