@@ -16,14 +16,21 @@ open a terminal in the folder and type "npm run install"
 it will install all the dependancy 
 ***
 
-open config.json and set everything up (trial and tribulation is a good idea to set up the different values)
+open config.json and set everything up (trial and error is a good idea to set up the different values)
 ***
 
-depending on your OS, use either sharenix.json or sharex.sxcu as your image uploader (i expect you to know how to use one of the other)
+depending on your OS, use either sharenix.json or sharex.sxcu as your image uploader (i expect you to know how to use one of the two)
+change your token and url if needed
 ***
 
-open a terminal in the folder and type "node index.js"
+open a terminal in the folder and type "node index.js". it is recommanded to use screen, docker, or ng to keep the webserver online.
 
-# other
+# reverse proxy
 
-if you use a reverse proxy like nginx, proxypass http://localhost:8080 for /host and that's it.
+if you use a reverse proxy like nginx, proxypass http://localhost:8069 for /i and that's it :
+
+```
+location /i {
+    proxy_pass http://localhost:8069
+}
+```

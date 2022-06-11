@@ -1,9 +1,9 @@
 {
-    "img_site":"",
-    "img_description":"",
-    "img_site_name":"",
-    "img_title":"",
-    "img_secret":"",
+    "img_site":"http://local.host",
+    "img_description":"hello world !",
+    "img_site_name":"eeeeeeeee",
+    "img_title":"THIS IS A TITLE",
+    "img_secret":"token",
     "port":"8069",
     "url":"http://local.host"
 }
