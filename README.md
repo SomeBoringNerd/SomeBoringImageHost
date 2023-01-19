@@ -38,13 +38,11 @@ open a terminal in the folder and type "npm run install"
 
 it will install all the dependancy
 
-open config.json and set everything up (trial and error is a good idea to set up the different values even if they are documented.)
-
 depending on your OS, use either sharenix.json or sharex.sxcu as your image uploader (I expect you to know how to use one of the two) in the configs folder.
-change your token and url if needed.
 
-last but not least, change the author_name and author_url in static/embed.json for a even more flashy embed.
+## config your embed : 
 
+https://github.com/SomeBoringNerd/SomeBoringImageHost/wiki
 
 ### systemd users : 
 open image.service and change the necessary values (path and users for example), and move it to /etc/systemd/system.
