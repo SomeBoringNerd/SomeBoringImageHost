@@ -1,0 +1,17 @@
+[Unit]
+Description=Image host
+
+[Service]
+# On some systems the user and group might be different.
+# Some systems use `apache` or `nginx` as the user and group.
+WorkingDirectory=/root/nodes/ImageHost
+User=root
+Group=root
+Restart=always
+ExecStart=node imagehost.js
+StartLimitInterval=180
+StartLimitBurst=30
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

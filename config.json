@@ -1,8 +1,8 @@
 {
     "img_site":"http://local.host",
-    "img_description":"hello world !",
-    "img_site_name":"eeeeeeeee",
-    "img_title":"THIS IS A TITLE",
+    "img_description":"the last text to show up",
+    "img_site_name":"small gray text on top of the embed",
+    "img_title":"The text that will redirect to the image",
     "img_secret":"token",
     "port":"8069",
     "url":"http://local.host"
