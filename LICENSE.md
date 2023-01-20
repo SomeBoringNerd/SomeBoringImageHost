@@ -24,7 +24,7 @@ I'm not a professional developper nor even a competent one, don't build your ent
 I do not publish my code online so it can be used by multi-billion corporation for free and be expected to do the maintenance. If you need that library / project so badly for your business, hire me as freelancer instead of bitching out when my obviously not-safe code don't work out and you can't be bothered to fork it to fix it.
 
 > 6. SPREAD THE LOVE : 
-If that code was so useful to you, than yours might be to other people, the license I use is free and open like my code, even if some people can be a pain in your ass, remember that the community is here to support you. My code was here, you used it. It's only right to allow someone else to use yours.
+If that code was so useful to you, then yours might be to other people, the license I use is free and open like my code, even if some people can be a pain in your ass, remember that the community is here to support you. My code was here, you used it. It's only right to allow someone else to use yours.
 
 based on the hilarious "don't be a dick" license by philsturgeon : 
 http://dbad-license.org/

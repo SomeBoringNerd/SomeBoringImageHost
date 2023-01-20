@@ -5,5 +5,11 @@
     "img_title":"The text that will redirect to the image",
     "img_secret":"token",
     "port":"8069",
-    "url":"http://local.host"
+    "url":"http://local.host",
+    "author_url": "https://someboringnerd.xyz/",
+    "author_name": [
+        "something idk",
+        "i use arch btw",
+        "have you heard Joe died of ligma ? That's really updog..."
+    ]
 }

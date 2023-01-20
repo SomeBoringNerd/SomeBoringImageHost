@@ -53,10 +53,27 @@ that way, the imagehost will start automatically when the vps start.
 
 # reverse proxy
 
-if you use a reverse proxy like nginx, proxypass http://localhost:(your port in config.json) for /i and that's it :
+if you use a reverse proxy like nginx, proxy_pass http://localhost:(your port in config.json) for /i and /host and that's it :
 
 ```
-location /i {
-    proxy_pass http://localhost:8069;
+# nginx config assuming you use default port (you probably do use default port let's be honest)
+server {
+        listen 80;
+        listen [::]:80;                 
+
+        server_name (your url without https or /);
+        
+        client_max_body_size 200M;
+
+        location /i
+        {
+                proxy_pass http://localhost:8069;
+        }
+        
+        location /host
+        {
+                proxy_pass http://localhost:8069;
+        }
 }
+
 ```

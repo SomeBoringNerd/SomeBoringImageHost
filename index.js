@@ -17,7 +17,6 @@ const sub = '/i'
 // app.use
 app.use(sub + '/img', express.static(path.join(__dirname, 'img/')))
 app.use(sub + '/css', express.static(path.join(__dirname, 'css/')))
-app.use(sub + '/', express.static(path.join(__dirname, 'static/')))
 
 // start server
 app.listen(port, () => {
@@ -42,6 +41,25 @@ app.post(sub + '/host', upload.single('sharex') ,(req, res) =>
     res.send(config.url + sub + "/" + def);
 })
 
+function getRandomInt(max) 
+{
+    return Math.floor(Math.random() * max);
+}
+
+app.get(sub + "/embed", (req, res) => 
+{
+    let random_Name = config.author_name;
+
+    let embed = {
+        "type":"link",
+        "version":"1.0",
+        "author_name":"⪿ " + random_Name[getRandomInt(random_Name.length)] + " ⫀",
+        "author_url":config.author_url
+    }
+
+    res.json(embed)
+})
+
 // image's page
 app.get(sub + '/:img_id', (req, res) => {
     // check if file exist
@@ -57,7 +75,7 @@ app.get(sub + '/:img_id', (req, res) => {
         <meta property="og:description" content="${config.img_description}">
         <meta name="theme-color" content="#E74C3C">
         <link rel="stylesheet" href="${sub}/css/upload.css">
-        <link type="application/json+oembed" href="${config.url}${sub}/embed.json">
+        <link type="application/json+oembed" href="${config.url}${sub}/embed">
     </head>
     <body>
         <center>
