@@ -1,4 +1,6 @@
 {
+    "embed_enabled": "false",
+    "author_enabled": "true",
     "img_site":"http://local.host",
     "img_description":"the last text to show up",
     "img_site_name":"small gray text on top of the embed",

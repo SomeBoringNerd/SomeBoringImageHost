@@ -54,7 +54,9 @@ app.get(sub + "/embed", (req, res) =>
         "type":"link",
         "version":"1.0",
         "author_name":"⪿ " + random_Name[getRandomInt(random_Name.length)] + " ⫀",
-        "author_url":config.author_url
+        "author_url":config.author_url,
+        "provider_name": config.img_site_name,
+        "provider_url": "https://github.com/SomeBoringNerd"
     }
 
     res.json(embed)
@@ -63,36 +65,46 @@ app.get(sub + "/embed", (req, res) =>
 // image's page
 app.get(sub + '/:img_id', (req, res) => {
     // check if file exist
-    if(!fs.existsSync(path.join(__dirname, '/img/' + req.params.img_id)) && !fs.existsSync(path.join(__dirname, '/img/' + req.params.img_id + ".png"))) return res.send('Not your lucky day, there\'s nothing here.');
+    if(!fs.existsSync(path.join(__dirname, '/img/' + req.params.img_id + ".png"))) return res.send('Not your lucky day, there\'s nothing here.');
 
-    let content = `<html>
-    <head>
-        <meta name="twitter:card" content="summary_large_image">
+    // create embed if allowed in config
+    let add_if_embed_enabled = config.embed_enabled == "true" ? `
         <meta property="og:title" content="${config.img_title}" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="${config.img_site_name}"/>
-        <meta property="og:image" content="${config.url}${sub}/img/${req.params.img_id}%EXT%"/>
         <meta property="og:description" content="${config.img_description}">
         <meta name="theme-color" content="#E74C3C">
+    ` : ""
+
+    // add author in embed if allowed in config
+    let add_if_author_enabled = (config.author_enabled == "true" && config.embed_enabled == "true") ? `
+        <link type="application/json+oembed" href="${config.url}${sub}/embed">` : ""
+
+    let content = `<html>
+    <head>
+        ${add_if_embed_enabled}
+        <meta property="og:image" content="${config.url}${sub}/img/${req.params.img_id}.png"/>
         <link rel="stylesheet" href="${sub}/css/upload.css">
-        <link type="application/json+oembed" href="${config.url}${sub}/embed">
+        <meta name="twitter:card" content="summary_large_image">
+        ${add_if_author_enabled}
     </head>
     <body>
+        <br>
         <center>
-            <h1>here you go ! :-)</h1>
-            <img src="${sub}/img/${req.params.img_id}%EXT%">
-            <h3>Honestly, I don\'t think you should open weird links on discord, or anywhere on the internet for what matter</h3>
-            <h4>made by <a href="https://github.com/SomeBoringNerd/SomeBoringImageHost">SomeBoringNerd</a></h4><br>
+            <div class="pre-surround">
+                <div class="surround">
+                    <br>
+                    <h1>here you go ! :-)</h1>
+                    <br>
+                    <img src="${sub}/img/${req.params.img_id}.png">
+                    <h3 style="color:gray">Uploaded at : ${fs.statSync(path.join(__dirname, '/img/' + req.params.img_id + ".png")).birthtime}</h2>
+                    <h3>Honestly, I don\'t think you should open weird links on discord,<br>or anywhere on the internet for what matter</h3>
+                    <h4>made by <a href="https://github.com/SomeBoringNerd/SomeBoringImageHost">SomeBoringNerd</a></h4><br>
+                </div>
+            </div>
         </center>
     </body>
 </html>`;
-	if(fs.existsSync(path.join(__dirname, '/img/' + req.params.img_id + ".png"))){
-		content = content.replace("%EXT%", ".png");
-		content = content.replace("%EXT%", ".png");
-	}else{
-		content = content.replace("%EXT%", "");
-		content = content.replace("%EXT%", "");
-	}
 
     // send page
     res.send(content)

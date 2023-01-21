@@ -1,12 +1,42 @@
+@font-face {
+    font-family: conthrax;
+    src: url('/i/css/fonts/conthrax-sb.ttf');
+}
+
+@font-face {
+    font-family: OfourThirty;
+    src: url('/i/css/fonts/04B_30__.ttf');
+}
+
+.surround {
+    outline: 8px ridge rgba(58, 58, 58, 0.6);
+    background-color: rgba(58, 58, 58, 0.6);
+    border-radius: 2rem;
+}
+
+.pre-surround {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 img{
+    outline: thick double #00b7ff;
     align-self: center;
+    max-height: 75%;
+    max-width: 75%;
 }
 
 html{
     background-color: black;
 }
 
-h1, h3, h4{
+h1, h2{
+    font-family: conthrax;
+    color:white;
+}
+
+h3, h4{
+    font-family: OfourThirty;
     color:white;
 }
 
