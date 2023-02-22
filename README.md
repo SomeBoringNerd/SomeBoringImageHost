@@ -65,12 +65,7 @@ server {
         
         client_max_body_size 200M;
 
-        location /i
-        {
-                proxy_pass http://localhost:8069;
-        }
-        
-        location /host
+        location ~
         {
                 proxy_pass http://localhost:8069;
         }
