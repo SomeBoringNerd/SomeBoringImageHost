@@ -38,7 +38,14 @@ app.post(sub + '/host', upload.single('sharex') ,(req, res) =>
     fs.rename(oldPath, newPath, () => {})
     
     // send back url to copypaste
-    res.send(config.url + sub + "/" + def);
+    if(config.fake_url != "")
+    {
+        res.send("[" + config.fake_url +  "](" + config.url + sub + "/" + def + ")");
+    }
+    else
+    {
+        res.send(config.url + sub + "/" + def);
+    }
 })
 
 function getRandomInt(max) 
